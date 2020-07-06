@@ -1,0 +1,80 @@
+*, 
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Bluu Next', sans-serif;
+    line-height: 1.2;
+    color: #000000;
+
+    background-color:  #edc7a9;
+    background-image: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0));
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 5vmin
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: #000000;
+}
+
+.center {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.text-center {
+    text-align: center;
+}
+
+.slide-content {
+    width: 100%;
+    max-width: 70%;
+    margin: 0 auto;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    &__author {
+        margin: 2rem 0;
+    }  
+    &__quote {
+        line-height: 1.3;
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    img {
+        margin: 0 1rem;
+        cursor: pointer;
+    }
+
+    
+}
