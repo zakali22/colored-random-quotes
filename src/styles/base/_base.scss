@@ -15,10 +15,7 @@ body {
     line-height: 1.2;
     color: #000000;
 
-    background-color:  #edc7a9;
-    background-image: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0));
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-image: linear-gradient(180deg, #ffffff, rgba(237,199,169, .6)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Margaret_Elizabeth_Sangster_002.jpg/220px-Margaret_Elizabeth_Sangster_002.jpg');
     min-height: 100vh;
 }
 
@@ -69,12 +66,34 @@ footer {
     position: fixed;
     bottom: 30px;
     left: 50%;
+    opacity: 0;
+    transition: all .3s ease-in-out;
     transform: translateX(-50%);
+
+    transform: translateY(50px);
 
     img {
         margin: 0 1rem;
         cursor: pointer;
     }
+}
 
-    
+.fadeIn {
+    opacity: 0;
+    animation: fadeInText .7s ease-in-out .3s forwards;
+}
+
+.slideIn {
+    opacity: 1;
+    transform: translate(-50%, 0)
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
