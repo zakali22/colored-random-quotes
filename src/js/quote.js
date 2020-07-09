@@ -49,6 +49,7 @@ const fetchBgImage = (author) => {
 footerBtns.forEach(btn => {
     btn.addEventListener('click', (event) => {
         const direction = event.target.dataset.direction;
+        toggleFadeIn(false)
         if(direction === 'prev'){
             prevSlide()
         } else if(direction === 'next'){
@@ -109,11 +110,22 @@ const randomNum = (min, max) => Math.floor(Math.random() * (max - min + 1) + min
 
 // Update content helper function
 const updateSlideContent = () => {
-    section.classList.add('fadeIn')
+    toggleFadeIn(true)
     authorEl.innerHTML = currQuote.author ? currQuote.author : 'Someone wise';
     quoteEl.innerHTML = currQuote.text;
     updateColors()
-    section.classList.remove('fadeIn')
+}
+
+// Toggle class 
+const toggleFadeIn = (show) => {
+    if(show){
+        setTimeout(() => {
+            section.classList.add('fadeIn')
+            console.log("Added class")
+        }, 1000);
+    } else {
+        section.classList.remove('fadeIn')
+    }
 }
 
 
@@ -144,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM is loaded')
     fetchQuotes().then(response => {
         currQuote = quotes[0]
+
         updateSlideContent()
     });
 })

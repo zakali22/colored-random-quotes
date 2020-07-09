@@ -53,7 +53,8 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+    opacity: 0;
+
     &__author {
         margin: 2rem 0;
     }  
@@ -66,11 +67,8 @@ footer {
     position: fixed;
     bottom: 30px;
     left: 50%;
-    opacity: 0;
     transition: all .3s ease-in-out;
     transform: translateX(-50%);
-
-    transform: translateY(50px);
 
     img {
         margin: 0 1rem;
@@ -79,21 +77,16 @@ footer {
 }
 
 .fadeIn {
-    opacity: 0;
-    animation: fadeInText .7s ease-in-out .3s forwards;
+    animation: animateInText .3s ease-in-out forwards;
 }
 
-.slideIn {
-    opacity: 1;
-    transform: translate(-50%, 0)
-}
-
-@keyframes fadeInText {
+@keyframes animateInText {
     0% {
         opacity: 0;
     }
-
     100% {
         opacity: 1;
     }
 }
+
+
